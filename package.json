@@ -1,0 +1,21 @@
+{
+  "name": "esx-web-shop",
+  "version": "2.0.0",
+  "description": "ESX 电商系统 - 外置网页商城",
+  "main": "server/esx-shop.js",
+  "scripts": {
+    "test": "echo \"ESX 商城系统\""
+  },
+  "keywords": [
+    "fivem",
+    "esx",
+    "shop",
+    "e-commerce",
+    "web"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}

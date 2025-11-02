@@ -1,0 +1,399 @@
+/* ===== 全局样式 ===== */
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --dark-color: #212529;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* ===== 轮播图样式 ===== */
+.banner-slide {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.bg-gradient-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.bg-gradient-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* ===== 商品卡片样式（优化动画） ===== */
+.product-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.product-icon {
+    font-size: 5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.product-icon-large {
+    font-size: 8rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.card-img-top {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 3px solid #dee2e6;
+}
+
+/* ===== 侧边栏样式 ===== */
+.list-group-item.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--primary-color);
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--primary-color);
+}
+
+/* ===== 导航栏样式 ===== */
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+/* ===== 购物车侧边栏 ===== */
+.offcanvas {
+    transition: transform 0.3s ease-in-out;
+}
+
+.offcanvas.show {
+    transform: none !important;
+}
+
+.offcanvas-backdrop {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.offcanvas-backdrop.show {
+    opacity: 0.5;
+}
+
+/* ===== 徽章动画（仅用于购物车更新） ===== */
+@keyframes badge-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* 移除自动动画，只在需要时添加 */
+.badge.animate {
+    animation: badge-pulse 0.4s ease;
+}
+
+/* ===== 按钮悬停效果（更柔和） ===== */
+.btn {
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ===== 输入框样式 ===== */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* ===== Toast 通知样式 ===== */
+.toast {
+    min-width: 300px;
+}
+
+.toast-header.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.toast-header.bg-danger {
+    background-color: var(--danger-color) !important;
+}
+
+.toast-header.bg-warning {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+.toast-header.bg-warning .btn-close {
+    filter: invert(0) !important;
+}
+
+/* ===== 模态框样式 ===== */
+.modal.show {
+    display: block !important;
+}
+
+.modal-backdrop.show {
+    opacity: 0.5;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== 加载动画 ===== */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-border {
+    animation: spin 0.75s linear infinite;
+}
+
+/* ===== 滚动条样式 ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ===== 响应式调整 ===== */
+@media (max-width: 768px) {
+    .banner-slide {
+        min-height: 300px;
+    }
+
+    .product-icon {
+        font-size: 3rem;
+    }
+
+    .offcanvas {
+        width: 100% !important;
+    }
+}
+
+/* ===== 动画效果 ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ===== 价格标签样式 ===== */
+.text-success {
+    color: var(--success-color) !important;
+}
+
+.text-danger {
+    color: var(--danger-color) !important;
+}
+
+/* ===== 卡片阴影效果 ===== */
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===== 渐变背景 ===== */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ===== 空状态样式 ===== */
+.empty-state {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.empty-state i {
+    font-size: 5rem;
+    opacity: 0.3;
+}
+
+/* ===== 粘性定位 ===== */
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+/* ===== 过渡效果 ===== */
+* {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+button, a {
+    transition-duration: 0.3s;
+}
+
+/* ===== Badge 样式增强 ===== */
+.badge {
+    font-weight: 600;
+    padding: 0.5em 0.8em;
+}
+
+/* ===== 输入组样式 ===== */
+.input-group-sm .btn {
+    padding: 0.25rem 0.5rem;
+}
+
+/* ===== 卡片悬停效果增强 ===== */
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    border-color: rgba(13, 110, 253, 0.2);
+}
+
+/* ===== Offcanvas 关闭按钮 ===== */
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* ===== 列表组项目 ===== */
+.list-group-item {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.list-group-item:hover:not(.active) {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* ===== 表单检查样式 ===== */
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ===== 下拉菜单样式 ===== */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* ===== 轮播控制器样式 ===== */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* ===== 分页样式（如需要） ===== */
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-link {
+    color: var(--primary-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ===== 自定义滚动条（购物车） ===== */
+.overflow-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* ===== 价格显示增强 ===== */
+.fs-4 {
+    font-size: calc(1.275rem + 0.3vw) !important;
+}
+
+/* ===== 商品图标容器 ===== */
+.card-img-top {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.product-card:hover .card-img-top::before {
+    left: 100%;
+}
